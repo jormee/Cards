@@ -1,2 +1,2 @@
 # Cards
-A social network of business
+A social network for business
