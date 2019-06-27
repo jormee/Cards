@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from '../../logo.svg'
+import { Link } from 'react-router-dom';
+import logo from '../../logo.svg';
 import './Card.css';
 
 const Card = (user) => {
 
     return (
-        <div className="flip-container dib bg-white tc dib ba b--black-20 br3 ma1 shadow-5 grow pa1 w-10">
+        <div className="flip-container dib bg-white tc dib ba b--green br3 ma1 grow pa1 w-10">
             <div className='flipper'>
                 <div className='front w-100'>
                     <div className="tc">
@@ -29,7 +30,7 @@ const Card = (user) => {
                             <hr className="mw3 bb bw1 b--black-10"/>
                         </div>
                         <p className="lh-copy measure tj f6 black-70">{user.bio}</p>
-                        <a href="/page/" className="btn btn-dark tr">Go to webpage</a>
+                        <Link to="/page" target='blank' className="btn btn-outline-success tr">Go to Page</Link>
                     </div>
             </div>
 

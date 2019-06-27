@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'tachyons';
 import { users } from '../UserDB';
 import Navbar from '../Components/Navbar/Navbar';
+import SignUp from '../Components/Forms/SignUp';
+import SignIn from '../Components/Forms/SignIn';
 import Footer from '../Components/Footer/Footer';
 import Cards from '../Components/Cards/Cards';
 import Home from '../Components/Home/Home';
+import err404 from '../Components/Errors/404';
 
 class App extends Component {
   constructor () {
@@ -13,7 +16,6 @@ class App extends Component {
     this.state={
       input: '',
       users: users,
-      route: 'home',
     }
   }
 
@@ -25,17 +27,21 @@ class App extends Component {
     const filteredCards = this.state.users.filter(user => {
       return(user.name.toLowerCase().includes(this.state.input.toLowerCase()));
     })
+
     return (
-      
-      <div className="db">
-        <Navbar searchChange={this.onInputChange}/>
-        {
-          this.state.route==='landing'
-          ?<Home />:
-          <Cards users={filteredCards}/>
-        }
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div className="db">
+          <Navbar searchChange={this.onInputChange} />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/cards' render={()=><Cards users={filteredCards}/>} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route component={err404} />
+          </Switch>
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
   };
   }
