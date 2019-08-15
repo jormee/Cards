@@ -4,6 +4,8 @@ const bcrypt = require ('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
+port = process.env.PORT || 3000;
+
 signin = require('./Controllers/signin');
 register = require('./Controllers/register');
 profile = require('./Controllers/profile');
@@ -36,6 +38,6 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcry
 
 app.post('/edit-profile', (req, res) => { profile.editProfile(req, res, db) });
 
-app.listen(3000, ()=> {
-    console.log('app is running on port 3000')
+app.listen(port, ()=> {
+    console.log(`app is running on port ${port}`)
 })
