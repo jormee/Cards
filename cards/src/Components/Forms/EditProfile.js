@@ -18,7 +18,7 @@ class SignIn extends Component {
         this.setState({password: e.target.value})
     }
 
-    onSignIn = () => {
+    onSubmit = () => {
         fetch('http://localhost:3000/signin', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
@@ -44,8 +44,8 @@ class SignIn extends Component {
                         <div className="mt3">
                             <label className="db fw4 lh-copy f6" htmlFor="email-address">Email address</label>
                             <input 
-                                onChange={this.onEmailChange} 
-                                className="pa2 input-reset ba br3 btn-outline-success w-100 measure" 
+                                placeholder='email'
+                                className="disabled pa2 input-reset ba br3 btn-outline-success w-100 measure" 
                                 type="email" 
                                 name="email-address"  
                                 id="email-address"
@@ -62,9 +62,9 @@ class SignIn extends Component {
                             />
                         </div>
                     </fieldset>
-                    <div className="mt3 pa2">
-                        <p><Link to='#' className="b ph3 pv2 input-reset ba br-pill btn-outline-success pointer f6 ma2" onClick={this.onSignIn}> Sign In</Link></p>
-                        <small className='db'>Don't have an account? <Link to='/signup' className='link pointer dim text-success'>Sign up</Link></small>
+                    <div className="mt3 pa2 w-100">
+                        <Link to='#' className="ph3 pv2 div input-reset ba br-pill btn-outline-success pointer f6 ma2" onClick={this.onSubmit}> Save</Link>
+                        <Link to='#' className="ph3 pv2 dib input-reset ba br-pill gray pointer f6 ma2" onClick={this.onSubmit}> Cancel</Link>
                     </div>
                 </form>
             </article>

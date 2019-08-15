@@ -5,6 +5,8 @@ import { users } from '../UserDB';
 import Navbar from '../Components/Navbar/Navbar';
 import SignUp from '../Components/Forms/SignUp';
 import SignIn from '../Components/Forms/SignIn';
+import Profile from '../Components/Profile/Profile';
+import EditProfile from '../Components/Forms/Edit Profile';
 import Footer from '../Components/Footer/Footer';
 import Cards from '../Components/Cards/Cards';
 import Home from '../Components/Home/Home';
@@ -36,6 +38,8 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/cards' render={()=><Cards users={filteredCards}/>} />
             <Route path='/signin' component={SignIn} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/edit-profile' component={EditProfile} />
             <Route path='/signup' component={SignUp} />
             <Route component={err404} />
           </Switch>

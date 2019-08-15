@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JorMee/Cards_.git"
+    "url": "git+https://github.com/JorMee/Cards.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JorMee/Cards_/issues"
+    "url": "https://github.com/JorMee/Cards/issues"
   },
-  "homepage": "https://github.com/JorMee/Cards_#readme"
+  "homepage": "https://github.com/JorMee/Cards#readme"
 }

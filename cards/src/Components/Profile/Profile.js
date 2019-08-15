@@ -8,7 +8,9 @@ const Profile = ()=> {
     return(
         <div >
             <header className='clearfix'>
-                <img alt='cover' title='cover' src={img} className='w-100 dib' height='150' />
+                <img alt='company logo' title='logo' src={img} className='br-100 mw5 dib' />
+                <div></div>
+
             </header>
         </div>
     )

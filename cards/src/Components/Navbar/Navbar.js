@@ -33,7 +33,7 @@ const Navbar = ({ searchChange }) => {
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2 btn-outline-success" type="search" placeholder="Search" aria-label="Search" onChange={searchChange}/>
+                    <input className="form-control mr-sm-2 bg-transparent text-success" type="search" placeholder="Search" aria-label="Search" onChange={searchChange}/>
                 </form>
             </div>
         </nav>

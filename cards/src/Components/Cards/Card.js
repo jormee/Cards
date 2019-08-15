@@ -16,7 +16,9 @@ const Card = (user) => {
                         {
                             user.industry.map((sector, i) => {
                             return (
-                                <p className='f6 fw6 mid-gray dib'>{user.industry[i]+', '} </p>
+                                <p 
+                                key={i}
+                                className='f6 fw6 mid-gray dib'>{user.industry[i]+', '} </p>
                                 )
                             })
                         } 
